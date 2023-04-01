@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "vant": "^4.1.2"
+  },
+  "devDependencies": {
+    "unplugin-vue-components": "^0.24.1"
+  }
+}
