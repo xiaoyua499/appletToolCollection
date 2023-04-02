@@ -136,6 +136,16 @@
     data.push(tableFoot)
     const ws = utils.aoa_to_sheet(data)
     const wb = utils.book_new()
+
+    // 设置列宽
+    var colWidth = [];
+    for (var i = 0; i < data.length; i++) {
+      colWidth[i] = {
+        wch: 20
+      };
+    }
+    ws['!cols'] = colWidth;
+
     utils.book_append_sheet(wb, ws, 'Sheet1')
     var fileData = write(wb, {
       bookType: "xlsx",
