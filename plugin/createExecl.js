@@ -28,7 +28,11 @@ function traverseObj(obj) {
   }
   return max_length
 }
-//创建Excel文件
+
+/**创建Excel文件
+ * @param {Object} jsonData json格式的数据
+ * @param {Object} fileName 文件名
+ */
 export function createExecl(jsonData, fileName) {
   // 将 JSON 数据转化为 worksheet
   const worksheet = utils.json_to_sheet(jsonData);

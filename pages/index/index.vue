@@ -41,24 +41,16 @@
       checked: false
     },
   ]
-
+  //表格标题
   let table = []
+  //金额数组
   let amountArr = []
+  //表格底部
   let tableFoot = [{}]
   let newUserList = []
 
-  function debounce(func, delay) {
-    let timerId;
-    return function(...args) {
-      clearTimeout(timerId);
-      timerId = setTimeout(() => {
-        func.apply(this, args);
-      }, delay);
-    };
-  }
   //监听checkbox的改变
   const checkboxChange = (e) => {
-    // console.log(e);
     // console.log('checkbox发生change事件，checked值为true的为：', e.detail.value)
     table = e.detail.value
     const items = title
@@ -76,26 +68,23 @@
 
   //点击提交后处理数据
   const submitEvent = () => {
+    //获取用户数据列表
+    const userList = getUserJson(table, tableFoot, str.value)
     const {
-      userList
-    } = getUserJson(table, tableFoot, str.value)
-
-    const {
-      date,
+      date, //当前日期
       millisecond
     } = getDate()
-    // console.log(date,
-    //   millisecond);
-    let amountArr = []
     for (let i = 0; i < userList.length; i++) {
-      amountArr.push(userList[i]['金额'])
+      newUserList.push(userList[i].userInfo)
+      // console.log(newUserList);
+      amountArr.push(userList[i].userInfo['金额'])
     }
-    // console.log(123, amountArr);
+    //获取总金额
     const totalAmount = calculation(amountArr)
-    // console.log(totalAmount);
-    newUserList = userList.concat(tableFoot)
-    const fileName = date + '_' + userList[0]['用户名'] + '_' + tableFoot[0]['账号'] + '_' + millisecond
-    // console.log(tableFoot);
+    newUserList = [...newUserList, ...tableFoot]
+    // console.log(newUserList);
+    const fileName = date + '_' + newUserList[0]['用户名'] + '_' + tableFoot[0]['账号'] + '_' + millisecond
+    //生成Execl文件
     createExecl(newUserList, fileName)
     str.value = ''
   }

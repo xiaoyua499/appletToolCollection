@@ -14,27 +14,38 @@ function ToCDB(str) {
   }
   return tmp
 }
+//用户列表
 const userList = []
-// let newUserList = []
-//获取用户输入的字符串并转换为json格式
+
+/** 获取用户输入的字符串并转换为json格式
+ * @param {Object} table 表头
+ * @param {Object} tableFoot 表尾
+ * @param {Object} str 用户输入的字符串
+ */
 export function getUserJson(table, tableFoot, str) {
   const newStr = ToCDB(str)
-  // console.log(newStr);
-  const removeSpacesArr = newStr.replace(/[ ]|[\r\n]/g, ";").split(';;')
-  // console.log(123, removeSpacesArr);
-  for (let i = 0; i < removeSpacesArr.length; i++) {
-    const userInfo = {}
-    const list = removeSpacesArr[i].replace(/[:]|[;]/g, "+")
-    const newList = list.replace(/[+]+/g, "+").split('+')
-    // console.log(123, newList);
-    for (let j = 0; j < newList.length; j++) {
-      userInfo[table[j]] = newList[j]
+  const regex = /^\s*(.+?:)?\s*(.+?)\s*$/gm;
+  let match;
+  const userList = [];
+  while ((match = regex.exec(newStr)) !== null) {
+    // 匹配到的分组 1
+    const group1 = match[1] ? match[1].replace(":", "") : "";
+    // 匹配到的分组 2
+    const group2 = match[2].split("+").map(str => str.trim());
+    const groups = []
+    if (group1.length !== 0) {
+      groups = [group1, ...group2];
+    } else {
+      groups = [...group2];
     }
-    userList.push(userInfo)
-    // newUserList = userList.concat(tableFoot)
-    // // console.log(newUserList);
+    const userInfo = {};
+    for (let i = 0; i < groups.length && i < table.length; i++) {
+      userInfo[table[i]] = groups[i];
+    }
+    // 保存结果
+    userList.push({
+      userInfo
+    });
   }
-  return {
-    userList
-  }
+  return userList
 }
