@@ -1,35 +1,35 @@
 {
-  "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-    {
-      "path": "pages/index/index",
-      "style": {
-        "navigationBarTitleText": "听雨专用小程序工具合集"
-      }
-    },
-    {
-    	"path" : "pages/clipboard/clipboard",
-    	"style" : 
-    	{
-    		"navigationBarTitleText" : "一键导入剪切板"
-    	}
-    },
-    {
-    	"path" : "pages/exportToExcel/exportToExcel",
-    	"style" : 
-    	{
-    		"navigationBarTitleText" : "一键生成Excel"
-    	}
-    }
-  ],
-  "globalStyle": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "听雨专用小程序工具合集",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
-  },
-  "uniIdRouter": {},
-  "usingComponents": {
-     "van-tabbar": "@vant/weapp/tabbar/index",
-      "van-tabbar-item": "@vant/weapp/tabbar-item/index"
-  }
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "听雨专用小程序工具合集"
+			}
+		},
+		{
+			"path": "pages/clipboard/clipboard",
+			"style": {
+				"navigationBarTitleText": "一键导入剪切板"
+			}
+		},
+		{
+			"path": "pages/exportToExcel/exportToExcel",
+			"style": {
+				"navigationBarTitleText": "一键生成Excel"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "听雨专用小程序工具合集",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"usingComponents": {
+			"van-button": "wxcomponents/VantWeapp/button/index",
+			"van-popup": "wxcomponents/VantWeapp/popup/index",
+			"van-checkbox": "wxcomponents/VantWeapp/checkbox/index",
+			"van-checkbox-group": "wxcomponents/VantWeapp/checkbox-group/index"
+		}
+	},
+	"uniIdRouter": {}
 }

@@ -1,0 +1,8 @@
+{
+  "miniprogramRoot": "./",
+  "setting": {
+    "packNpmManually": true,
+    "nodeModulesPath": "/node_modules",  // 路径根据你的项目结构来调整
+    "useCompilerPlugins": true
+  }
+}

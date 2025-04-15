@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "vant": "^4.1.2",
+    "@vant/weapp": "^1.11.7",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
