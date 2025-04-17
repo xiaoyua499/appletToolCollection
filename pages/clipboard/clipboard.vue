@@ -18,7 +18,8 @@
 			<span>{{ progressText }}</span>
 		</view>
 		<view class="tip-text">
-			输入文本后点击提交按钮等待进度条完成后即可批量复制进剪切板！复制过程中请勿动手机屏幕！！！</view>
+			输入文本后点击提交按钮等待进度条完成后即可批量复制进剪切板！复制过程中请勿动手机屏幕！！！
+		</view>
 	</view>
 </template>
 
@@ -118,9 +119,11 @@
 		padding: 5px;
 
 		.clipboardTitle {
+			margin-bottom: 8px;
 			width: 100%;
 			text-align: center;
-			margin-bottom: 8px;
+			font-size: 16px;
+			font-weight: 600;
 		}
 
 		.progress-container {

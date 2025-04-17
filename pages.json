@@ -28,7 +28,8 @@
 			"van-button": "wxcomponents/VantWeapp/button/index",
 			"van-popup": "wxcomponents/VantWeapp/popup/index",
 			"van-checkbox": "wxcomponents/VantWeapp/checkbox/index",
-			"van-checkbox-group": "wxcomponents/VantWeapp/checkbox-group/index"
+			"van-checkbox-group": "wxcomponents/VantWeapp/checkbox-group/index",
+			"van-field": "wxcomponents/VantWeapp/field/index"
 		}
 	},
 	"uniIdRouter": {}

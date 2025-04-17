@@ -2,7 +2,7 @@
   <view class="box">
 	  <exportToExcel v-show="currentTab===0"></exportToExcel>
 	  <clipboard v-show="currentTab===1"></clipboard>
-	<Tabbar :currentTab="currentTab" @switchTab="switchTab"></Tabbar>
+	<Tabbar  :currentTab="currentTab" @switchTab="switchTab"></Tabbar>
   </view>
 </template>
 
